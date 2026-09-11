@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#151a1b"><title>筑境 · 微缩工地 / SITE 05</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <main id="stage" aria-label="可交互的微缩建筑工地"></main>
+  <header><div class="eyebrow"><span class="mark">▧</span> ATELIER / MINIATURE SERIES</div><h1>筑境<span>工地里的微小世界</span></h1><p>一座正在生长的建筑，一张凝固时间的工作台。</p></header>
+  <div class="project"><span class="live"></span> SITE 05 <span class="divider">/</span> 建造进行时 <small>1 : 100 · STRUCTURAL STUDY</small></div>
+  <aside id="info" hidden aria-live="polite"><button id="close" aria-label="关闭信息">×</button><div class="eyebrow" id="info-kind"></div><h2 id="info-title"></h2><p id="info-en"></p><div id="info-details"></div><div class="progress"><i></i></div><button id="operate-device" hidden>操作设备</button><small>双击机械可自动靠近观察</small></aside>
+  <section id="task-card" aria-live="polite"><span>施工任务 <b id="task-number">01</b></span><strong id="task-title">钢筋吊装</strong><p id="task-text">使用塔吊 A，把钢筋运到 Building A 二楼平台。</p><div class="task-progress"><i></i></div><div class="task-actions"><button id="task-action">开始任务</button><button id="mission-reset" title="重置当前任务">重置</button></div></section>
+  <section id="equipment-dock" aria-label="可操作设备"><button data-device="craneA"><b>01</b><span>塔吊 A</span></button><button data-device="craneB"><b>02</b><span>塔吊 B</span></button><button data-device="excavator"><b>03</b><span>挖掘机</span></button><button data-device="truck"><b>04</b><span>卡车</span></button><button data-device="forklift"><b>05</b><span>叉车</span></button><button data-device="mixer"><b>06</b><span>搅拌车</span></button></section>
+  <section id="control-panel" hidden aria-label="设备控制面板"><div class="control-head"><button id="exit-control">退出</button><div><span id="control-type">设备控制</span><strong id="control-title">塔吊 A</strong></div><span id="control-status">控制中</span><button id="camera-mode" aria-label="切换相机">📷</button></div><div id="telemetry"></div><button id="adjust-view">调整视角</button><div id="mobile-controls"><div id="joystick" aria-label="虚拟摇杆"><div id="joystick-base"><div id="joystick-stick"></div></div><small>移动 / 转向</small></div><div id="right-controls"><div id="control-grid"></div><div class="control-actions"><button id="cargo-action" hidden>吊起</button><button id="control-reset">重置</button></div></div></div></section>
+  <section id="tutorial" aria-label="手机操作教学"><div><span>TOUCH SITE / 触摸工地</span><h2>双手操作微缩机械</h2><ol><li><b>01</b>单指拖动查看工地</li><li><b>02</b>点击一台机械</li><li><b>03</b>点击“操作设备”</li><li><b>04</b>左手控制移动，右手控制机械</li></ol><p>横屏操作体验更好</p><button id="tutorial-start">开始操作</button></div></section>
+  <footer><div class="legend"><span class="line"></span><b>小尺度，大世界。</b><span>点击机械 · 进入控制 · 完成施工任务</span></div><nav aria-label="场景控制"><button id="reset" title="恢复默认视角"><span>⌂</span><b>复位</b></button><button id="rotate" aria-pressed="false" title="自动旋转"><span>↻</span><b>环绕</b></button><button id="fullscreen" title="全屏"><span>⛶</span><b>全屏</b></button></nav></footer>
+  <div id="loading"><span class="loader"></span><h2>正在搭建微小世界</h2><p>混凝土、钢铁与一点想象力。</p></div><div id="toast" role="status"></div>
+  <script>function showStartupError(message){const l=document.getElementById('loading');if(!l)return;l.hidden=false;l.querySelector('h2').textContent='3D 场景无法启动';l.querySelector('p').textContent=message||'请刷新页面后重试。';console.error('[SITE 05]',message)}window.addEventListener('error',e=>showStartupError(e.message?'加载失败：'+e.message:'脚本或模型资源加载失败，请检查网络后刷新。'));window.addEventListener('unhandledrejection',e=>showStartupError('启动失败：'+(e.reason?.message||e.reason||'未知错误')));setTimeout(()=>{const l=document.getElementById('loading');if(l&&!l.hidden)l.querySelector('p').textContent='Three.js 加载超时，请检查网络连接后刷新。';},15000);</script>
+  <script type="module" src="./main.js"></script>
+</body></html>
